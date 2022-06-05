@@ -1,5 +1,5 @@
 package BoardGame;
-
+// Cria uma peça
 public class Piece {
     protected Position position;
     private Board board;

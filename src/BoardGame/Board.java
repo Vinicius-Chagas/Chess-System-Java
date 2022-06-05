@@ -24,7 +24,7 @@ public class Board {
         return columns;
     }
 
-    public Piece piece(int rows, int columns)
+    public Piece piece(int rows, int columns) // Atribue uma posição a uma peça
     {
         if(!positionExists(rows, columns))
         {
@@ -33,7 +33,7 @@ public class Board {
         return pieces[rows][columns];
     }
 
-    public Piece piece(Position position)
+    public Piece piece(Position position) // Retorna a peça que está em determinada linha e coluna
     {
         if(!positionExists(position))
         {
@@ -42,7 +42,7 @@ public class Board {
         return pieces[position.getRow()][position.getColumn()];
     }
 
-    public void placePiece(Piece piece, Position position)
+    public void placePiece(Piece piece, Position position) // Retorna uma peça que está em determinada posição
     {
         if(thereIsAPiece(position))
         {
@@ -52,7 +52,23 @@ public class Board {
         piece.position = position;
     }
 
-    private boolean positionExists(int row, int column)
+    public Piece removePiece(Position position) // Remove uma peça do tabuleiro
+    {
+        if(!positionExists(position))
+        {
+            throw new BoardException("Position not on the board");
+        }
+        if(piece(position) == null)
+        {
+            return null;
+        }
+        Piece aux = piece(position);
+        aux.position = null;
+        pieces[position.getRow()][position.getColumn()] = null;
+        return aux;
+    }
+
+    private boolean positionExists(int row, int column) // Testa se a posição selecionada existe no tabuleiro
     {
         return row >=0 && row < rows && column >-0 && column < columns;
     }
@@ -60,7 +76,7 @@ public class Board {
     {
         return positionExists(position.getRow(), position.getColumn());
     }
-    public boolean thereIsAPiece(Position position)
+    public boolean thereIsAPiece(Position position) // Testa se há uma peça na posição selecionada
     {
         if(!positionExists(position))
         {
@@ -68,4 +84,6 @@ public class Board {
         }
         return piece(position) != null;
     }
+
+
 }

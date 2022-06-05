@@ -3,6 +3,7 @@ package Chess;
 import BoardGame.Board;
 import BoardGame.Piece;
 
+// Cria uma peça de xadrez
 public class ChessPiece extends Piece {
     private Color color;
 

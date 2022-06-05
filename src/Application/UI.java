@@ -3,7 +3,7 @@ package Application;
 import Chess.ChessPiece;
 
 public class UI {
-    public static void printBoard(ChessPiece[][] pieces)
+    public static void printBoard(ChessPiece[][] pieces) //impressão do tabuleiro
     {
         for (int i = 0; i < pieces.length; i++) {
             System.out.print((8-i) + " ");
@@ -15,7 +15,7 @@ public class UI {
         System.out.println(" a b c d e f g h");
     }
 
-    public static void printPiece(ChessPiece piece)
+    public static void printPiece(ChessPiece piece)// Impressão das peças e verificação se há uma peça na posição
     {
         if(piece == null)
         {

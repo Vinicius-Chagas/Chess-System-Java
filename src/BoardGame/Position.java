@@ -1,5 +1,6 @@
 package BoardGame;
 
+// Cria uma posição
 public class Position {
     private Integer row;
     private Integer column;

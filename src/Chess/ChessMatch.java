@@ -13,7 +13,7 @@ public class ChessMatch {
         initialSetup();
     }
 
-    public ChessPiece[][] getPieces()
+    public ChessPiece[][] getPieces() // Retorna as peças que estão no tabuleiro
     {
         ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()] ;
         for (int i = 0; i < board.getRows(); i++) {
@@ -22,6 +22,11 @@ public class ChessMatch {
             }
         }
         return mat;
+    }
+
+    private void placeNewPiece(char colunm, int row, ChessPiece piece) // Coloca uma peça em uma posiçao do tabuleiro
+    {
+        board.placePiece(piece, new ChessPosition(colunm, row).toPosition());
     }
 
     private void initialSetup()
