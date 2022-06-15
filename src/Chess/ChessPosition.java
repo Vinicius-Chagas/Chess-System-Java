@@ -6,7 +6,7 @@ public class ChessPosition {
     private Character column;
     private Integer row;
 
-    public ChessPosition(Character column, Integer row)
+    public ChessPosition(char column, int row)
     {
         if(column < 'a' || column > 'h' || row < 1 || row > 8)
         {
@@ -31,7 +31,7 @@ public class ChessPosition {
 
     protected static ChessPosition fromPosition(Position position) // Transforma 0,0 para a8
     {
-        return new ChessPosition((char) ('a' - position.getColumn()), 8 - position.getRow());
+        return new ChessPosition((char)('a' - position.getColumn()), 8 - position.getRow());
     }
 
     @Override

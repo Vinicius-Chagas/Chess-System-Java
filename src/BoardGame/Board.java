@@ -70,7 +70,7 @@ public class Board {
 
     private boolean positionExists(int row, int column) // Testa se a posição selecionada existe no tabuleiro
     {
-        return row >=0 && row < rows && column >-0 && column < columns;
+        return row >=0 && row < rows && column >=0 && column < columns;
     }
     public boolean positionExists(Position position)
     {
