@@ -14,12 +14,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Program {
-    public static void main(String[] Args)
-    {
+    public static void main(String[] Args) throws IOException, InterruptedException {
         Scanner sc = new Scanner(System.in);
         ChessMatch chessMatch = new ChessMatch();
         List<ChessPiece> capturedPieces = new ArrayList<>();
-        while(true)
+        while(!chessMatch.isCheckMate())
         {
             try {
                 UI.clearScreen();
@@ -57,6 +56,9 @@ public class Program {
                 throw new RuntimeException(e);
             }
         }
+        UI.clearScreen();
+        UI.printMatch(chessMatch, capturedPieces);
+
     }
 
 
